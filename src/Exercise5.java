@@ -5,30 +5,30 @@ public class Exercise5 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter a number: ");
-        int num = scanner.nextInt();
+        int userNumber = scanner.nextInt();
 
-        int sum;
-        int A0 = 0;
-        int A1 = 1;
+        int nextNumber;
+        int previousNumber = 0;
+        int currentNumber = 1;
 
-        if (num==0) {
+        if (userNumber ==0) {
             System.out.println("The number is fibonacci");
         }
 
         else {
             do  {
-                sum = A0 + A1;
-                A0 = A1;
-                A1 = sum;
+                nextNumber = previousNumber + currentNumber;
+                previousNumber = currentNumber;
+                currentNumber = nextNumber;
 
-                if (sum == num) {
+                if (nextNumber == userNumber) {
                     System.out.println("The number is fibonacci");
                 }
 
-                else if (sum > num){
+                else if (nextNumber > userNumber){
                     System.out.println("The number is not fibonacci");
                 }
-            } while (num>sum);
+            } while (userNumber > nextNumber);
         }
     }
 }
