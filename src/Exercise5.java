@@ -5,13 +5,13 @@ public class Exercise5 {
         Scanner scanner = new Scanner(System.in);
 
         System.out.println("Enter a number: ");
-        int userNumber = scanner.nextInt();
+        int userInput = scanner.nextInt();
 
         int nextNumber;
         int previousNumber = 0;
         int currentNumber = 1;
 
-        if (userNumber ==0) {
+        if (userInput ==0) {
             System.out.println("The number is fibonacci");
         }
 
@@ -21,14 +21,14 @@ public class Exercise5 {
                 previousNumber = currentNumber;
                 currentNumber = nextNumber;
 
-                if (nextNumber == userNumber) {
+                if (nextNumber == userInput) {
                     System.out.println("The number is fibonacci");
                 }
 
-                else if (nextNumber > userNumber){
+                else if (nextNumber > userInput){
                     System.out.println("The number is not fibonacci");
                 }
-            } while (userNumber > nextNumber);
+            } while (userInput > nextNumber);
         }
     }
 }
