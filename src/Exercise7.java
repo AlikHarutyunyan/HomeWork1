@@ -1,37 +1,28 @@
 public class Exercise7 {
     public static void main(String[] args) {
-
         int digit;
-        int sum=0;
-        int resDigits=1;
-        int count=0;
-        int temp1;
-        int temp2;
+        int numberToCheck;
+        int sum = 0;
+        int digitsMultiplyResult = 1;
+        int digitsCounter = 1;
 
-        for (int i=0; i<=1000; i++) {
+        for (int currentNumber = 0; currentNumber <= 1000; currentNumber++) {
+            numberToCheck = currentNumber;
 
-            temp1=i;
-            while (temp1 != 0) {
-                temp1 /= 10;
-                count++;
-            }
-
-            temp2=i;
-            while (temp2 != 0) {
-
-                digit = temp2 % 10;
-                for (int j = 1; j <= count; j++) {
-                    resDigits = resDigits * digit;
+            while(numberToCheck != 0){
+                digit = numberToCheck % 10;
+                numberToCheck /= 10;
+                while(currentNumber/digitsCounter != 0){
+                    digitsMultiplyResult *= digit;
+                    digitsCounter *= 10;
                 }
 
-                sum = sum + resDigits;
-
-                temp2/=10;
-                resDigits=1;
+                sum += digitsMultiplyResult;
+                digitsMultiplyResult = 1;
+                digitsCounter = 1;
             }
 
-            count = 0;
-            if (sum==i) {
+            if(sum == currentNumber){
                 System.out.println(sum);
             }
             sum = 0;
